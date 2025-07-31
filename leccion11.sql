@@ -1,4 +1,4 @@
--- Lección 12.1: Sentencias INSERT
+-- Lección 11.1
 
 CREATE TABLE copy_employees AS SELECT * FROM employees;
 CREATE TABLE copy_departments AS SELECT * FROM departments;
@@ -44,7 +44,7 @@ SELECT ID, last_name, salary, commission_pct
 FROM employees
 WHERE job_id LIKE '%REP%';
 
--- Lección 12.2: Actualización de Valores de Columna y Supresión de Filas
+-- Lección 11.2: Actualización de Valores de Columna y Supresión de Filas
 
 ALTER TABLE copy_employees ADD COLUMN phone_number VARCHAR(20);
 UPDATE copy_employees SET phone_number = '123456' WHERE ID = 303;
@@ -78,7 +78,7 @@ WHERE e.manager_id IN (
     HAVING count(d.department_id) < 2
 );
 
--- Lección 12.3: Valores DEFAULT, MERGE e Inserciones en Varias Tablas
+-- Lección 11.3: Valores DEFAULT, MERGE e Inserciones en Varias Tablas
 
 CREATE TABLE my_employees (
     hire_date DATE DEFAULT CURRENT_DATE,
